@@ -4,6 +4,7 @@ gem 'rails', '3.2.9'
 gem 'sqlite3', platform: :ruby
 gem 'jquery-rails'
 gem 'dynamic_form', '1.1.4'
+gem 'devise', '2.1.0.rc'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
