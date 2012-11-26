@@ -10,11 +10,17 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
 
+  # Clear all email delivers before tests are run
   config.before do
     ActionMailer::Base.deliveries.clear
   end
 
+  # Helpers from the email_spec gem
   config.include EmailSpec::Helpers
+
+  # Helpers for devise, such as sign_in
+  config.include Devise::TestHelpers, type: :controller
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
