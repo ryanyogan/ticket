@@ -10,6 +10,10 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
 
+  config.before do
+    ActionMailer::Base.deliveries.clear
+  end
+
   config.include EmailSpec::Helpers
   # ## Mock Framework
   #
