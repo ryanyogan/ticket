@@ -9,7 +9,7 @@ feature "Signing Up" do
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
-    message = "Please open the link to activate your account."
+    message = "Please confirm your account before signing in."
     page.should have_content(message)
   end
 end
