@@ -8,4 +8,8 @@ class Project < ActiveRecord::Base
   def self.viewable_by(user)
     joins(:permissions).where(permissions: { action: "view", user_id: user.id })
   end
+
+  def self.for(user)
+    user.admin? ? self : self.viewable_by(user)
+  end
 end
