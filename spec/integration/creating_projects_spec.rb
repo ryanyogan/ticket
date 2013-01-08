@@ -25,4 +25,6 @@ feature 'Creating Projects' do
     title = "TextMate 2 - Projects - Ticketee"
     find("title").should have_content(title)
   end
+
+
 end
